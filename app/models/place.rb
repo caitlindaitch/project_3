@@ -2,7 +2,7 @@ class Place
 
   def self.read type
       # google API which returns places within the specified radius of the given location coordinates
-    url = "http://maps.googleapis.com/maps/api/place/nearbysearch/json?location=38.897676,-77.036530&radius=5000&name=#{type}&key=#{ENV["google_api_key"]}"
+    url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=38.897676,-77.036530&radius=5000&name=#{type}&key=#{ENV["google_api_key"]}"
 
     # HTTParty calls the google API and we are storing the API response in a varialbe called response
     response = HTTParty.get(url, :verify => false)
